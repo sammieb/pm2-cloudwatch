@@ -97,7 +97,7 @@ async function request(method, url, token = null) {
                   // transport
                   new (WinstonCloudWatch)({
                     logGroupName: conf.logGroupName,
-                    logStreamName: instanceid || conf.logStreamName,
+                    logStreamName: conf.logStreamName || instanceid,
                     awsRegion: region || conf.awsRegion,
                     awsAccessKeyId: conf.awsAccessKeyId,
                     awsSecretKey: conf.awsSecretKey
